@@ -5,10 +5,11 @@ import useStyles from './styles'
 
 
 
-const Frame = ( {frame} ) => {
+const Frame = ( { frame } ) => {
+    const classes = useStyles()
     return (
-        <Card className="classes.root">
-            <CardMedia className="classes.media" image='' title={frame.name}/>
+        <Card className={classes.root}>
+            <CardMedia className={classes.media} image='' title={frame.name}/>
             <CardContent>
                 <div className={classes.cardContent}>
                     <Typography variant='h5' gutterBottom>
