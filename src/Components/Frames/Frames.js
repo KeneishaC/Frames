@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from  '@material-ui/core'
 
-
+import Frame from './Frame/Frame'
 
 const frames = [
     { id: 1, name: 'cat-eye', description: 'cat-eye glasses', price: '$150'},
