@@ -4,8 +4,8 @@ import {Grid} from  '@material-ui/core'
 import Frame from '../Frame/Frame'
 
 const frames = [
-    { id: 1, name: 'cat-eye', description: 'cat-eye glasses', price: '$150'},
-    { id: 2, name: 'round', description: 'round glasses', price: '$150'}
+    { id: 1, name: 'cat-eye', description: 'cat-eye glasses', price: '$150', image: 'https://image.ebdcdn.com/image/upload/c_fill,e_sharpen:70,f_auto,h_400,q_85,w_800/v1/product/frame/gray/pl7306_0.jpg'},
+    { id: 2, name: 'round', description: 'round glasses', price: '$150', image: 'https://cdn.shopify.com/s/files/1/0081/4075/0948/products/LF32AC3OPT_2_720x.jpg?v=1574436476'}
 ]
 
 const Frames = () => {
