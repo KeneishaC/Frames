@@ -1,2 +1,2 @@
 # Frames
-A e-commece store that sells Eyeglasses
+An e-commece store that sells Eyeglasses
