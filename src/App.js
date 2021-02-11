@@ -3,7 +3,7 @@ import { commerce } from './lib/commerce'
 // import Frames from './Components/Frames/Frames'
 // import Navbar from './Components/Navbar/Navbar'
 
-import { Frames, Navbar} from './Components'
+import { Products, Navbar} from './Components'
 
 const App = () => {
     const [products, setProducts] = useState([])
@@ -16,12 +16,12 @@ const App = () => {
 
     useEffect(() => {
         fetchProducts()
-
     },[])
+
     return (
         <div> 
             <Navbar />
-            <Frames />
+            <Products products={products}/>
         </div>
 
     )

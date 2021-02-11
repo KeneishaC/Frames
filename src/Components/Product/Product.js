@@ -5,21 +5,21 @@ import useStyles from './styles'
 
 
 
-const Frame = ( { frame } ) => {
+const Product = ( { product } ) => {
     const classes = useStyles()
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={frame.image} title={frame.name}/>
+            <CardMedia className={classes.media} image={product.image} title={product.name}/>
             <CardContent>
                 <div className={classes.cardContent}>
                     <Typography variant='h5' gutterBottom>
-                        {frame.name}
+                        {product.name}
                     </Typography>
                     <Typography variant='h5'>
-                        {frame.price}
+                        {product.price}
                     </Typography>
                     <Typography variant='body2' color='textSecondary'>
-                        {frame.description}
+                        {product.description}
                     </Typography>
                 </div>
             </CardContent>
@@ -32,4 +32,4 @@ const Frame = ( { frame } ) => {
     )
 }
 
-export default Frame
+export default Product
