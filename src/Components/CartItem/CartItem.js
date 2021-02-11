@@ -22,7 +22,7 @@ const CartItem = ({ item }) => {
                 </div>
                 <Button variant='conatined' type='button' color='secondary'>Remove</Button>
             </CardActions>
-        </Card>
+        </Card> 
     )
 } 
 
