@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // import Frames from './Components/Frames/Frames'
 // import Navbar from './Components/Navbar/Navbar'
 
-import { Products, Navbar, Cart} from './Components'
+import { Products, Navbar, Cart, Checkout} from './Components'
 
 const App = () => {
     const [products, setProducts] = useState([])
@@ -66,7 +66,9 @@ const App = () => {
                             handleRemoveFromCart={handleRemoveFromCart}
                             handleEmptyCart={handleEmptyCart}
                         /> 
-
+                    </Route>
+                    <Route exat path='/checkout'>
+                            <Checkout />
                     </Route>
                 </Switch>
             </div>
