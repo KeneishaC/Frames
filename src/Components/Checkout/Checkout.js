@@ -10,7 +10,7 @@ const steps = ['Shipping adress', 'Payment Details']
 const Checkout = () => {
     const classes = useStyles();
 
-    const [activeStep, setActiveStep] = useState(0)
+    const [activeStep, setActiveStep] = useState(3)
 
     const Confrimation = () => (
         <div>
