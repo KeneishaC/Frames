@@ -34,7 +34,7 @@ const AddressForm = () => {
                         <FormInput required name='email' label='Email' />
                         <FormInput required name='city' label='City' />
                         <FormInput required name='zip' label='Zip /Postal code' />
-                        <Grid item={xs} sm={6}>
+                        {/* <Grid item={xs} sm={6}>
                             <InputLabel>Shipping Country</InputLabel>
                             <Select value={} fullWidth onChange={}>
                                 <MennuItem key={} value={} >
@@ -57,7 +57,7 @@ const AddressForm = () => {
                                     Select me
                                 </MennuItem>
                             </Select>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </form>
             </FormProvider>

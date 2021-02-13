@@ -1,5 +1,6 @@
-import React, {useState } from 'react'
+import React, {useState, useEffect } from 'react'
 import {Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core'
+import {commerce} from '../../lib/commerce'
 import useStyles from './styles';
 import AddressForm from '../CheckoutForm/AddressForm'
 import PaymentForm from '../CheckoutForm/PaymentForm'
@@ -7,10 +8,28 @@ import PaymentForm from '../CheckoutForm/PaymentForm'
 const steps = ['Shipping adress', 'Payment Details']
 
 
-const Checkout = () => {
+const Checkout = ({ cart }) => {
     const classes = useStyles();
 
-    const [activeStep, setActiveStep] = useState(3)
+    const [activeStep, setActiveStep] = useState(0)
+    const [checkoutToken, setCheckoutToken] = useState(null)
+    //generate a token for the countries and checkout
+
+    useEffect(() => {
+        const generateToken = async () => {
+            try{
+                const token = await commerce.checkout.generateToken(cart.id, {type: 'cart' })
+                console.log(token)
+
+                setCheckoutToken(token)
+            } catch(error){
+
+            }
+        }
+
+        generateToken()
+
+    }, [])
 
     const Confrimation = () => (
         <div>

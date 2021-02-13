@@ -68,7 +68,8 @@ const App = () => {
                         /> 
                     </Route>
                     <Route exat path='/checkout'>
-                            <Checkout />
+                        //pass the cart as props to be used in checkout
+                            <Checkout cart={cart}/>
                     </Route>
                 </Switch>
             </div>
