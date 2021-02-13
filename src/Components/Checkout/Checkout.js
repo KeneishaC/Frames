@@ -29,7 +29,7 @@ const Checkout = ({ cart }) => {
 
         generateToken()
 
-    }, [])
+    }, [cart])
 
     const Confrimation = () => (
         <div>
@@ -38,7 +38,7 @@ const Checkout = ({ cart }) => {
 
     )
     const Form = () => activeStep ===0
-        ? <AddressForm />
+        ? <AddressForm checkoutToken={checkoutToken}/>
         : <PaymentForm />
 
     return (
@@ -54,7 +54,7 @@ const Checkout = ({ cart }) => {
                                 </Step>
                             )}
                         </Stepper>
-                        {activeStep === steps.length ? <Confrimation /> : <Form />}
+                        {activeStep === steps.length ? <Confrimation /> : checkoutToken && <Form />}
                     </Paper> 
                 </main>
 
