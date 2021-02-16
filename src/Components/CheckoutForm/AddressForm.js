@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { InputLabel, Select, MenuItem, Grid, Typography } from '@material-ui/core'
+import { InputLabel, Select, MenuItem, Grid, Typography, Button } from '@material-ui/core'
 import { useForm, FormProvider } from 'react-hook-form'
-
+import  { Link } from 'react-router-dom'
 import { commerce } from '../../lib/commerce'
 
 import FormInput from '../CheckoutForm/CustomTextField'
@@ -18,7 +18,7 @@ const AddressForm = ({ checkoutToken }) => {
     const countries = Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name}))
     const subdivisions = Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name}))
     //shipping options are an array by default
-    const options = shippingOptions.map((sO) => ({id: sO.id, label: `${sO.descriptioon} - (${sO.price.formatted_with_symbol})`}))
+    const options = shippingOptions.map((sO) => ({id: sO.id, label: `${sO.description} - (${sO.price.formatted_with_symbol})`}))
     console.log(shippingOptions)
 
     const fetchShippingCountries = async(checkoutTokenId) => {
@@ -35,11 +35,11 @@ const AddressForm = ({ checkoutToken }) => {
         setShippingSubdivision(Object.keys(subdivisions)[0])
     }
     
-    const fetchShippingOptions = async (checkoutTokenId, country, region = null) => {
-        const options = await commerce.checkout.getShippingOptions(checkoutTokenId, {country, region})
+    const fetchShippingOptions = async (checkoutTokenId, country,  stateProvince = null) => {
+        const options = await commerce.checkout.getShippingOptions(checkoutTokenId, { country, region: stateProvince });
 
-        setShippingOptions(options)
-        setShippingOption(options[0].id)
+        setShippingOptions(options);
+        setShippingOption(options[0].id);
 
     }
 
@@ -90,7 +90,7 @@ const AddressForm = ({ checkoutToken }) => {
                         <Grid item xs={12} sm={6}>
                             <InputLabel>Shipping Options</InputLabel>
                             <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.target.value)}>
-                                    {subdivisions.map((option)=> (
+                                    {options.map((option)=> (
                                         <MenuItem key={option.id} value={option.id} >
                                             {option.label}
                                         </MenuItem>
@@ -99,6 +99,11 @@ const AddressForm = ({ checkoutToken }) => {
                         </Grid>
                     </Grid>
                 </form>
+                <br />
+                <div style={{display: 'fles', justifyContent: 'space-betweeen'}}>
+                    <Button component={Link} to='/cart' variant='outlined'>Back to Cart</Button>
+                    <Button type='submit'variant='contained' color='primary'>Next</Button>
+                </div>
             </FormProvider>
             
         </>
