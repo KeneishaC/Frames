@@ -8,7 +8,29 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 
 const PaymentForm = ({ checkoutToken, backStep }) => {
 
-    const hanleSubmit =() => {
+    const hanleSubmit =(event, elements, stripe) => {
+        event.prventDefault();
+        if(!stripe || !elements) return 
+        const cardElement = elements.getElement(CardElement)
+
+        const { error, paymentMethod } = await stripe.createPaymentMethod({ type: 'card', card: cardElement })
+
+        if(error) {
+            console.log(error)
+        } else {
+            const orderData = {
+                line_items: checkoutToken.live.lineitems,
+                customer: { firstname: shippingData.FirstName, lastname: shippingData.lastName, email: shippingData.email },
+                shipping: { 
+                    name: 'Primary', 
+                    street: shippingData.address1, 
+                    town_city: shippingData.city,
+                    county_state: shippingData.shippingSubdivision,
+                    postal_zip_code: shippingData.zip,
+                    country: shippingData.shippingCountry
+                }
+            }
+        }
 
     }
 
