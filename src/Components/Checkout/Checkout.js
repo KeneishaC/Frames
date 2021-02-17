@@ -8,7 +8,7 @@ import PaymentForm from '../CheckoutForm/PaymentForm'
 const steps = ['Shipping adress', 'Payment Details']
 
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     const classes = useStyles();
 
     const [activeStep, setActiveStep] = useState(0)

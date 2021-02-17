@@ -29,8 +29,16 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
                     postal_zip_code: shippingData.zip,
                     country: shippingData.shippingCountry
                 },
-                fulfillment: { shipping_method: shippingData.shippingOption }
+                fulfillment: { shipping_method: shippingData.shippingOption },
+                payment: {
+                    gateway: 'stripe',
+                    stripe: {
+                        payment_method_id: paymentMethod.id
+                    }
+
+                }
             }
+            
         }
 
     }
