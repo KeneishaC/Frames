@@ -8,6 +8,10 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 
 const PaymentForm = ({ checkoutToken, backStep }) => {
 
+    const hanleSubmit =() => {
+
+    }
+
     return (
         <>
             <Review checkoutToken={checkoutToken} />
@@ -16,7 +20,7 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
             <Elements stripe={stripePromise}>
                 <ElementsConsumer>
                     {({ elements, stripe }) => (
-                        <form>
+                        <form onSubmit={(e)=> hanleSubmit(e, elements, stripe)}>
                             <CardElement />
                             <br /><br />
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
