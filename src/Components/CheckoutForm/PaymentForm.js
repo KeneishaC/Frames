@@ -4,7 +4,7 @@ import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js
 import { loadStripe } from '@stripe/stripe-js'
 import  Review from './Review'
 
-const stripePromise = loadStripe('...')
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 
 const PaymentForm = ({ checkoutToken, backStep }) => {
 
@@ -22,6 +22,7 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                     <Button variant='outlined' onClick={backStep}>BACK</Button>
                                     <Button type='submit' variant='contained' disabled={!stripe} color='primary'>
+                                        //takes token from items in cart to get full price
                                         Pay { checkoutToken.live.subtotal.formatted_with_symbol }
                                     </Button>
                             </div>
