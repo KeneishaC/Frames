@@ -28,7 +28,8 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
                     county_state: shippingData.shippingSubdivision,
                     postal_zip_code: shippingData.zip,
                     country: shippingData.shippingCountry
-                }
+                },
+                fulfillment: { shipping_method: shippingData.shippingOption }
             }
         }
 
