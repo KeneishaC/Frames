@@ -6,11 +6,14 @@ import  Review from './Review'
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 
-const PaymentForm = ({ checkoutToken, backStep }) => {
+const PaymentForm = ({ checkoutToken, shippingData, backStep, nextStep, onCaptureCheckout }) => {
 
-    const hanleSubmit =(event, elements, stripe) => {
+    const hanleSubmit = async (event, elements, stripe) => {
+
         event.prventDefault();
+
         if(!stripe || !elements) return 
+
         const cardElement = elements.getElement(CardElement)
 
         const { error, paymentMethod } = await stripe.createPaymentMethod({ type: 'card', card: cardElement })
@@ -38,7 +41,9 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
 
                 }
             }
-            
+                onCaptureCheckout(checkoutToken.id, orderData)
+
+                nextStep()
         }
 
     }
