@@ -77,7 +77,7 @@ const App = () => {
             <div> 
                 <Navbar totalItems={cart.total_items} />
                 <Switch>
-                    <Route exact path='/'>
+                    <Route exact path='/shop'>
                         <Products products={products} onAddToCart={handleAddToCart}/>
                     </Route>
                     <Route exact path='/cart'>
@@ -89,7 +89,7 @@ const App = () => {
                         /> 
                     </Route>
                     <Route exat path='/checkout'>
-                        //pass the cart as props to be used in checkout
+                        {/* pass the cart as props to be used in checkout */}
                             <Checkout 
                                 cart={cart}
                                 order={order}

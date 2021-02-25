@@ -11,7 +11,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
  
     const EmptyCart = () => (
         <Typography variant='subtitle1'>You don't have any frames, start adding them now!
-            <Link to='/' className={classes.link}> start adding them now</Link>
+            <Link to='/shop' className={classes.link}> start adding them now</Link>
         </Typography>
     )
     const FilledCart = () => (
