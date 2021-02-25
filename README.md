@@ -1,5 +1,5 @@
 # Frames
-An e-commece store that sells Eyeglasses
+An e-commece store that sells Eyeglasses. Commerce.js API is used for all shipping and product information. Users are able to choose from a selection of frames and use the checkout. Shipping options include domestic and International.
 
 ## Technologies Used
 - [React.js](https://reactjs.org/)
