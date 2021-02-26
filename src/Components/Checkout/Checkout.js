@@ -9,7 +9,7 @@ const steps = ['Shipping adress', 'Payment Details']
 
 
 const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
-    const classes = useStyles();
+    const classes = useStyles()
 
     const [activeStep, setActiveStep] = useState(0)
     const [checkoutToken, setCheckoutToken] = useState(null)
@@ -41,10 +41,15 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     }
 
     const Confrimation = () => (
-        <div>
-            Confrimation
-        </div>
-
+        <>
+            <div>
+                <Typography variant='h5'>Thank you for your purchase, firstName lastName </Typography>
+                <Divider className={classes.divider}/>
+                <Typography variant='subtitle2'>Order ref: ref</Typography>
+                <br />
+                <Button  component={Link} to='/shop' variant='outlined' type='button'>Return to Shopping</Button>
+            </div>
+        </>
     )
     const Form = () => activeStep ===0
         ? <AddressForm checkoutToken={checkoutToken} next={next}/>
