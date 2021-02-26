@@ -40,7 +40,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
         nextStep();
     }
 
-    const Confrimation = () => (
+    let Confrimation = () => order.customer ? (
         <>
             <div>
                 <Typography variant='h5'>Thank you for your purchase, firstName lastName </Typography>
@@ -50,7 +50,23 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
                 <Button  component={Link} to='/shop' variant='outlined' type='button'>Return to Shopping</Button>
             </div>
         </>
-    )
+    ) : (
+        <div className={classes.spinner}>
+            <CircularProgress />
+
+        </div>
+    ) 
+
+    if(error){
+        <>
+            <Typography variant='h5'>Error:{rerror}</Typography>
+            <br />
+            <Button  component={Link} to='/shop' variant='outlined' type='button'>Return to Shopping</Button>
+
+        </>
+    }
+
+
     const Form = () => activeStep ===0
         ? <AddressForm checkoutToken={checkoutToken} next={next}/>
         : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} />
