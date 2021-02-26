@@ -57,7 +57,7 @@ const App = () => {
            const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder)
 
            setOrder(incomingOrder)
-           refreshCart();
+           refreshCart()
 
        } catch (error) {
            setErrorMessage(error.data.errror.message)
@@ -75,7 +75,7 @@ const App = () => {
     return (
         <Router>
             <div> 
-                <Navbar totalItems={cart.total_items} />
+                        <Navbar totalItems={cart.total_items} />
                 <Switch>
                     <Route exact path='/'>
                             <HomePage />
