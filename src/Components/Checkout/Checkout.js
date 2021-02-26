@@ -24,7 +24,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 
                 setCheckoutToken(token)
             } catch(error){
-
+                console.log(error)
             }
         }
 
