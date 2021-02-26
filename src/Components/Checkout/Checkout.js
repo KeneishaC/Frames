@@ -60,7 +60,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 
     if(error){
         <>
-            <Typography variant='h5'>Error:{rerror}</Typography>
+            <Typography variant='h5'>Error:{error}</Typography>
             <br />
             <Button  component={Link} to='/shop' variant='outlined' type='button'>Return to Shopping</Button>
 
