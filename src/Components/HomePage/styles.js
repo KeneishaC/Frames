@@ -1,12 +1,21 @@
 import { makeStyles  } from '@material-ui/core/styles'
-
+import Image from '../../assets/landing.jpg'
 
 export default makeStyles(() => ({
     root: {
-        minheight: '100vh',
-        backgroundImage: 'url(/assets/landing.png)'
+        minHeight: '100vh',
+        backgroundImage: `url(${Image})`,
+        backgroundPosition: 'center' , 
+        backgroundSize: 'cover', 
+        // backgroundRepeat: 'no-repeat',
+        // height: '25vh',
+        // width: 'calc(20vw * 0.54 - 2%)',
+        // borderRadius: 8,
+        // display: 'flex',
+        marginLeft: '10px',
+        marginTop: '10px'
     },
     media: {
-        paddingTop: '50.25%', //or 16:9
+        paddingTop: '5%', //or 16:9
     },
 }))
