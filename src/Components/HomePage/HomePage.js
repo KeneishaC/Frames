@@ -7,9 +7,9 @@ const HomePage = () => {
     const classes = useStyles()
 
     return (
-        <div>
+        <div className={classes.root}>
             <Grid item xs={12} sm={6}>
-                <Typography variant='h1' gutterBottom >Welcome to Frames</Typography>
+                <Typography className={classes.media}variant='h1' gutterBottom >Welcome to Frames</Typography>
                 <Button component={Link} to='/shop' size='large' variant='conatined' type='button' color='primary'>Start Shopping</Button>
             </Grid>
         </div>
