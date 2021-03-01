@@ -16,16 +16,15 @@ export default makeStyles(() => ({
         // marginTop: '10px'
       },
       button: {
-        background: 'linear-gradient(45deg, #78997d 30%, #FF8E53 90%)',
+        background: 'linear-gradient(45deg, #78997d 40%, #789901 90%)',
         borderRadius: 3,
         border: 0,
         color: 'white',
         height: 48,
-        padding: '0 30px',
-        boxShadow: '0 3px 5px 2px #836369',
+        boxShadow: '0 3px 5px 2px #807d7d',
       },
       media: {
-        color: '#a5aaa2f',
-        paddingTop: '8%', //or 16:9
+        color: 'white',
+        paddingTop: '15%', //or 16:9
     },
 }))
