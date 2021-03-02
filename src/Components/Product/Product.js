@@ -15,14 +15,14 @@ const Product = ( { product, onAddToCart } ) => {
         <CardMedia className={classes.media} image={product.media.source} title={Product.name} />
         <CardContent>
             <div className={classes.cardContent}>
-                <Typography variant='h5' gutterBottom>
+                <Typography variant='h4' gutterBottom>
                     {product.name}
                 </Typography>
-                <Typography variant='h5'>
+                <Typography variant='h6'>
                     {product.price.formatted_with_symbol}
                 </Typography>
             </div>
-            <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant='body2' color='textSecondary' />
+            <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant='body4' color='textSecondary' />
         </CardContent>
         <CardActions disableSpacing className={classes.cardAction}>
             <IconButton aria-label="Add to Cart" onClick={() => onAddToCart(product.id, 1)}>

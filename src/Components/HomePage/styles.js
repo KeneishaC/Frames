@@ -2,9 +2,9 @@ import { makeStyles  } from '@material-ui/core/styles'
 import Image from '../../assets/landing.jpg'
 
 export default makeStyles((theme) => ({
+  toolbar: theme.mixins.toolbar,
     root: {
         minHeight: '100vh',
-        // '@media (min-width:780px)'
         minWidth: '100vw',
         backgroundImage: `url(${Image})`,
         backgroundPosition: 'center' , 
