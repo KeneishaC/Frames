@@ -16,6 +16,7 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.up('xs')]: {
           marginRight: '20px',
         },
+          flexGrow: 1,
         // width: 'calc(20vw * 0.54 - 2%)',
         // borderRadius: 8,
         // display: 'flex',
