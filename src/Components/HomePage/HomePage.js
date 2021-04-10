@@ -5,6 +5,7 @@ import useStyles from './styles'
 
 const HomePage = () => {
     const classes = useStyles()
+    const location = useLocation()
 
     return (
         <div className={classes.root}>

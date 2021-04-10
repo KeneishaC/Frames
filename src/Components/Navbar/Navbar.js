@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation  } from 'react-router-dom'
-import {AppBar, Toolbar, IconButton, Badge, MenuItem, Typography } from '@material-ui/core'
+import {AppBar, Toolbar, IconButton, Badge, Typography } from '@material-ui/core'
 import { ShoppingCart } from "@material-ui/icons"
 
 import logo from '../../assets/icons8-vintage-glasses-100.png'
